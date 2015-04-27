@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class dynamic-insert="false" table="T_VIDEOJOCS" dynamic-update="false" mutable="true" name="classes.Videojoc" optimistic-lock="version" polymorphism="implicit" select-before-update="false">
+        <id name="idVideojoc" type="int">
+            <column name="ID_VIDEOJOC" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="titol" type="string">
+            <column name="TITOL" length="50" not-null="true" />
+        </property>
+        <property name="dissenyadors" type="string">
+            <column name="DISENYADORS" length="50" />
+        </property>
+        <property name="desenvolupadors" type="string">
+            <column name="DESENVOLUPADORS" length="50" />
+        </property>
+        <property name="distribuidors" type="string">
+            <column name="DISTRIBUIDORS" length="50" />
+        </property>
+        <property name="plataformes" type="string">
+            <column name="PLATAFORMES" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
