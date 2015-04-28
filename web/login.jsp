@@ -14,8 +14,8 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
-<jsp:useBean id="gestio" scope="session" class="bd.GestioBD" />
-<jsp:useBean id="usu" scope="session" class="classes.BeanUsuari" />
+<jsp:useBean id="gestio" scope="session" class="controllers.GestioUsu" />
+<jsp:useBean id="usu" scope="session" class="classes.Usuari" />
 
 <html>
   <head>
@@ -26,10 +26,12 @@
       <jsp:setProperty name="usu" property="*" />
       <% if (request.getParameter("nom")==null) { %>
       <form action="login.jsp" method="post">
-      Nom <input type="text" name="nom" size="20"/><br/>
-      Clau    <input type="password" name="clau" size="20"  /> <br/>
+          <label for="nom">Nom: </label>
+          <input type="text" name="nom" size="20" /><br/>
+          <label for="clau">Clau: </label>
+          <input type="password" name="clau" size="20"  /> <br/>
             
-      <input type="submit" value="Entrar"/>
+      <input type="submit" value="Login"/>
       
       </form>
       <!-- s'hauria de controlar amb javascript que el formulari no pot ser buit-->
@@ -40,13 +42,10 @@
               ses.setAttribute("usua",usu);
       
       %>
-      <jsp:forward page="menu.jsp" />
+      <jsp:forward page="index.jsp" />
         <%  }
       %>
       Si és la primera vegada, <a href="registrar.jsp">registra't </a>
-      <jsp:include page="index.jsp">
-          <jsp:param name="nom" value="Alejandro"/>
-      </jsp:include>
   </body>
 </html>
 

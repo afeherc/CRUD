@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class dynamic-insert="false" table="T_USUARIS" dynamic-update="false" mutable="true" name="classes.Usuari" optimistic-lock="version" polymorphism="implicit" select-before-update="false">
+  <id name="nom" type="string">
+            <column name="NOM" length="22"  />
+            <generator class="assigned" />
+        </id>
+        <property name="clau" type="string">
+            <column name="CLAU" length="33"  />
+        </property>
+  </class>
+      
+</hibernate-mapping>

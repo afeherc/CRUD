@@ -19,9 +19,9 @@
         <h2>Dades del videojoc</h2>
         <form method="post">
             <label for="idVideojoc">Id Videojoc: </label>
-            <input name="idVideojoc" type="text" size="4"/><br/>
+            <input name="idVideojoc" type="text" size="4" required="true"/><br/>
             <label for="titol">Titol: </label>
-            <input name="titol" type="text" size="20"/><br/>
+            <input name="titol" type="text" size="20" required="true"/><br/>
             <label for="disenyadors">Disenyadors: </label>
             <input name="disenyadors" type="text" size="20"/><br/>
             <label for="desenvolupadors">Desenvolupadors: </label>
@@ -29,7 +29,7 @@
             <label for="distribuidors">Distribuidors: </label>
             <input name="distribuidors" type="text" size="20"/><br/>
             <label for="plataformes">Plataformes: </label>
-            <input name="plataformes" type="text" size="20"/><br/>
+            <input name="plataformes" type="text" size="20" required="true"/><br/>
             <input type="submit" value="Inserir videojoc" name="inserir">
         </form>
         <% }else {%>

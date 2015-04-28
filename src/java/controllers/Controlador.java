@@ -123,6 +123,20 @@ public class Controlador extends HttpServlet{
                 RequestDispatcher rd = request.getRequestDispatcher("llistar_per_editar_videojocs.jsp");
                 rd.forward(request, response);
             }
+            else if (accio.equals("validar")){
+                //consulta a la bd a traves d'Hibernate
+                session.beginTransaction();
+                Query query = session.createQuery("from Videojoc");
+                List<Videojoc> list = new ArrayList();
+                list = query.list();
+                session.getTransaction().commit();
+
+                request.setAttribute("videojocs", list);
+                RequestDispatcher rd = request.getRequestDispatcher("llistar_videojocs.jsp");
+                rd.forward(request, response);
+
+                //llistat amb enllaç per modificar
+            }
         }catch(HibernateException | IOException | ServletException | NumberFormatException ex){
             System.out.println("Controlador "+ex);
             

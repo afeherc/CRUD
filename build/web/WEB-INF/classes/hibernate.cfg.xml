@@ -8,5 +8,6 @@
     <property name="hibernate.connection.username">SYSTEM</property>
     <property name="hibernate.connection.password">1234</property>
     <mapping resource="Videojoc.hbm.xml"/>
+    <mapping resource="usuari.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
