@@ -7,7 +7,7 @@
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
     <property name="hibernate.connection.username">SYSTEM</property>
     <property name="hibernate.connection.password">1234</property>
-    <mapping resource="Videojoc.hbm.xml"/>
     <mapping resource="usuari.hbm.xml"/>
+    <mapping resource="videogame.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -13,10 +13,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Llistat videojocs</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>Llistat de videojocs</h1>
-        <p>Edita un videojoc clicant sobre l'id.</p>
+        
+        <form action="" method="post" class="elegant-aero">
+            <h1> Llistat de videojocs per editar.
+                <span>Fes clic en el numero de identificador per editar un videojoc. </span>
+            </h1>  
+        
+
         <table>   
             <tr><th>Id</th><th>Títol</th><th> Dissenyadors</th><th>Desenvolupadors</th><th>Distribuidors</th><th>Plataformes</th></tr>       
         
@@ -31,7 +37,8 @@
                  out.print(" </tr>");
             }
             %>
-       </table>
-       <a href="index.jsp">Torna al index</a>
+       </table><br/>
+       Torna al <a href="index.jsp">index</a>
+       </form>
     </body>
 </html>

@@ -27,6 +27,7 @@ public class Controlador extends HttpServlet{
      * @param response
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
+     * @throws controllers.IdExistentException
      */
     protected void processRequest(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException{
@@ -41,6 +42,7 @@ public class Controlador extends HttpServlet{
                 response.sendRedirect("formulari_alta_videojoc.jsp");
 
             } else if (accio.equals("inserir")) {
+//              try{
                 //les dades venen del formulari (la vista)
                 Videojoc vjoc = (Videojoc) request.getAttribute("videojoc");
                 //manipulacio bd a traves d'Hibernate
@@ -48,7 +50,10 @@ public class Controlador extends HttpServlet{
                 //session.saveOrUpdate(vjoc);
                 session.save(vjoc);
                 session.getTransaction().commit();
-
+//                }catch(HibernateException ex){
+//                    System.out.println(ex);
+//                    throw new IdExistentException();
+//                }
                 response.sendRedirect("index.jsp");
 
             } else if (accio.equals("llistar")) {
@@ -60,7 +65,8 @@ public class Controlador extends HttpServlet{
                 session.getTransaction().commit();
 
                 request.setAttribute("videojocs", list);
-                RequestDispatcher rd = request.getRequestDispatcher("llistar_videojocs.jsp");
+                RequestDispatcher rd = 
+                        request.getRequestDispatcher("llistar_videojocs.jsp");
                 rd.forward(request, response);
 
                 //llistat amb enllaç per modificar
@@ -74,7 +80,8 @@ public class Controlador extends HttpServlet{
                 String id = request.getParameter("idVideojoc");
                 //consulta a la bd a traves d'Hibernate
                 session.beginTransaction();
-                Query query = session.createQuery("delete Videojoc where id = :ID");
+                Query query = 
+                        session.createQuery("delete Videojoc where id = :ID");
                 query.setParameter("ID", new Integer(Integer.parseInt(id)));
                 query.executeUpdate();
                 session.getTransaction().commit();
@@ -84,7 +91,8 @@ public class Controlador extends HttpServlet{
                 String id = request.getParameter("idVideojoc");
                 //consulta a la bd a traves d'Hibernate
                 session.beginTransaction();
-                Query query = session.createQuery("from Videojoc where id = :ID");
+                Query query = 
+                        session.createQuery("from Videojoc where id = :ID");
                 query.setParameter("ID", new Integer(Integer.parseInt(id)));
                 Videojoc vjoc;
                 vjoc = (Videojoc)query.uniqueResult();
@@ -105,11 +113,15 @@ public class Controlador extends HttpServlet{
                 //les dades venen del formulari (la vista)
                 Videojoc vjoc = new Videojoc(id, titol, diss, dese, dist, plat);
                 //manipulacio bd a traves d'Hibernate
+                try{
                 session.beginTransaction();
                 session.saveOrUpdate(vjoc);
                 //session.save(vjoc);
                 session.getTransaction().commit();
-
+                }catch(HibernateException ex){
+                    System.out.println(ex);
+                    throw new IdExistentException();
+                }
                 response.sendRedirect("index.jsp");
             }else if (accio.equals("llistar_per_editar")){
                 //consulta a la bd a traves d'Hibernate
@@ -137,21 +149,29 @@ public class Controlador extends HttpServlet{
 
                 //llistat amb enllaç per modificar
             }
-        }catch(HibernateException | IOException | ServletException | NumberFormatException ex){
+        }catch(IdExistentException |HibernateException | IOException | ServletException | NumberFormatException ex){
             System.out.println("Controlador "+ex);
             
             throw new ServletException(ex);
         }
     }
 
+    /**
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp); //To change body of generated methods, choose Tools | Templates.
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        processRequest(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp); //To change body of generated methods, choose Tools | Templates.
+        processRequest(req, resp);
     }
     
 }
