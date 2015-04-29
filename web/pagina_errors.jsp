@@ -20,7 +20,9 @@ Pàgina que rep errors i els printa segons el tipus amb un misstge personalitzat
         <title>Houston, houston, tenemos un problema</title>
     </head>
     <body>  
-        <%    
+        <% 
+            Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
+            out.print(throwable.getMessage());
         if(exception.getCause() instanceof UsuariRepetitException){
             out.print("Ho lamento: no podem tenir usuaris amb el mateix identificador.\n");
         } 
