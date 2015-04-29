@@ -4,7 +4,9 @@
     Author     : Alejandro
 --%>
 
-
+<%-- llistar_videojocs.jsp 
+Pàgina que rep un ArrayList amb tots els videojocs i els printa en una taula.
+--%>
 <%@page import="classes.Videojoc"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -3,8 +3,10 @@ package classes;
 import java.io.Serializable;
 
 /**
- *
- * @author Alejandro
+ * POJO de videojoc
+ * @author Alejandro Feher Canadell
+ * @since 1.0
+ * @version 1.0 29-04-2015
  */
 public class Videojoc implements Serializable{
     private int idVideojoc;

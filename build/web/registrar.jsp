@@ -3,10 +3,10 @@
     Created on : 28-abr-2015, 10:28:00
     Author     : Alejandro
 --%>
-<!--   registrar.jsp 
- Serveix per donar d'alta usuaris nous del sistema
- no pot existir el mateix nom en la bbdd, sino salta excepcio
- Es passa tot l'usuari a la sessio
+<!--registrar.jsp 
+Serveix per donar d'alta usuaris nous del sistema no pot existir el mateix nom
+en la bbdd, sino salta excepcio UsuariExistentException Es passa tot l'usuari a
+la sessio.
 -->
 <%@page errorPage="pagina_errors.jsp" contentType="text/html" %>
 <%@ page contentType="text/html"%>
@@ -54,13 +54,12 @@
         </form>-->
 
         <% } else {
-          gestio.registrarUsuari(usu); %>
-        <% HttpSession ses = request.getSession();
-            /* setAttribute Name, Value */
-            ses.setAttribute("usua", usu);
+          gestio.registrarUsuari(usu);
+          HttpSession ses = request.getSession();
+          /* setAttribute Name, Value */
+          ses.setAttribute("usua", usu);
         %>
         <jsp:forward page="index.jsp" />
-
         <% }%>
     </body>
 </html>

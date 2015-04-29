@@ -3,8 +3,10 @@
     Created on : 27-abr-2015, 9:44:23
     Author     : Alejandro
 --%>
-
-
+<%-- llistar_per_editar_videojocs.jsp 
+Pàgina que rep tots els videojocs de la base de dades i fa una taula amb l'id
+com a redireccionament cap a un formulari per editar-lo.
+--%>
 <%@page import="classes.Videojoc"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

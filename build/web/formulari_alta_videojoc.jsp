@@ -3,7 +3,14 @@
     Created on : 26-abr-2015, 14:31:13
     Author     : Alejandro
 --%>
-
+<%-- formulari_alta_vidojoc.jsp 
+Formulari per donar d'alta videojocs. Si el parametre idVideojoc és null
+(només quan es carrega la pàgina) mostra el formulari, sino, els camps
+idVideojoc titol i plataforma son obligatoris require="true" i el formulari
+només s'envía quan idVideojoc no és null o millor dit fa un forward a la pàgina
+Controlador amb el parametre acció igual a inserir. I un mapeig del objecte 
+Videojoc (useBean, setProperty)
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="videojoc" class="classes.Videojoc" scope="request"/>
 <!DOCTYPE html>

@@ -1,10 +1,13 @@
-<%-- login.jsp 
--- pagina d'entrada a un sistema. S'utilitza un bean Usuari
--- amb totes les properties per passar
--- el contingut de les caixes de text del formulari a la funcio validarUsuari
--- Els "name" de les caixes del formulari han de ser "exactament" el mateix
--- nom que els atributs del Bean [nom-nom, clau-clau, etc-etc]
--- Es passa tot el bean, també, dintre de la sessió. HttpSession
+<%-- 
+    Document   : llistar_videojocs
+    Created on : 27-abr-2015, 9:58:23
+    Author     : Alejandro
+--%>
+<%-- llistar_videojocs.jsp 
+Pàgina que utilitza un bean de gestió de class.Usuari i un de class.Usuari per 
+en cas d'haver emplenat el formulari executar la funció del gestor validarUsuari
+i en cas de ser vàlid iniciar una sessió amb l'objecte i finalment un forward al
+index.jsp
 --%>
 <%@page errorPage="pagina_errors.jsp" contentType="text/html" %>
 <%@ page contentType="text/html"%>

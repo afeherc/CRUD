@@ -16,8 +16,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
- *
- * @author Alejandro
+ * Classes per gestionar les comandes de la Vista i "Controlar-les" perque vagin
+ * a bon port (Model) bases de dades.
+ * @author Alejandro Feher Canadell
+ * @since 1.0
+ * @version 1.0 29-04-2015
  */
 @WebServlet(name = "Controlador", urlPatterns = {"/Controlador"})
 public class Controlador extends HttpServlet{
@@ -27,7 +30,6 @@ public class Controlador extends HttpServlet{
      * @param response
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
-     * @throws controllers.IdExistentException
      */
     protected void processRequest(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException{
@@ -150,14 +152,11 @@ public class Controlador extends HttpServlet{
                 //llistat amb enllaç per modificar
             }
         }catch(IdExistentException |HibernateException | IOException | ServletException | NumberFormatException ex){
-            System.out.println("Controlador "+ex);
-            
+            System.out.println("Controlador "+ex);      
             throw new ServletException(ex);
         }
     }
-
     /**
-     *
      * @param req
      * @param resp
      * @throws ServletException

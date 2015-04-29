@@ -3,6 +3,13 @@
     Created on : 27-abr-2015, 10:00:50
     Author     : Alejandro
 --%>
+<%-- formulari_edit_videojoc.jsp 
+Formulari que rep un objecte videojoc, request.getAttribute("videojoc");
+i posa els atributs a les diferents parts del formulari i l'envia fent un post
+ja que no es pot fer com el formulari d'alta i cridar-se a si mateix, bueno es
+podria guardar tots els valors en variables i després comprobar si han canviat i
+si ho han fet redireccionar en comptes de fer un post.
+--%>
 <%@page errorPage="pagina_errors.jsp" contentType="text/html" %>
 <%@page import="classes.Videojoc"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -83,20 +90,21 @@
             Torna al <a href="index.jsp">index</a>
         </form>
         
-        <!--<h2>Dades del videojoc</h2>
+        <!--Formulari antic (sense css)
+        <h2>Dades del videojoc</h2>
         <form method="post" action="Controlador?accio=update">
             <label for="idVideojoc">Id Videojoc: </label>
-            <input name="idVideojoc" type="text" size="4" value="<%=vjoc.getIdVideojoc()%>"/><br/>
+            <input name="idVideojoc" type="text" size="4" value="<%--=vjoc.getIdVideojoc()--%>"/><br/>
             <label for="titol">Titol: </label>
-            <input name="titol" type="text" size="20" value="<%=vjoc.getTitol()%>"/><br/>
+            <input name="titol" type="text" size="20" value="<%--=vjoc.getTitol()--%>"/><br/>
             <label for="dissenyadors">Dissenyadors: </label>
-            <input name="dissenyadors" type="text" size="20" value="<%=diss%>"/><br/>
+            <input name="dissenyadors" type="text" size="20" value="<%--=diss--%>"/><br/>
             <label for="desenvolupadors">Desenvolupadors: </label>
-            <input name="desenvolupadors" type="text" size="20" value="<%=dese%>"/><br/>
+            <input name="desenvolupadors" type="text" size="20" value="<%--=dese--%>"/><br/>
             <label for="distribuidors">Distribuidors: </label>
-            <input name="distribuidors" type="text" size="20" value="<%=dist%>"/><br/>
+            <input name="distribuidors" type="text" size="20" value="<%--=dist--%>"/><br/>
             <label for="plataformes">Plataformes: </label>
-            <input name="plataformes" type="text" size="20" value="<%=vjoc.getPlataformes()%>"/><br/>
+            <input name="plataformes" type="text" size="20" value="<%--=vjoc.getPlataformes()--%>"/><br/>
             <input type="submit" value="Edita el videojoc" name="editar">
         </form>
         <a href="index.jsp">Torna al index</a>-->

@@ -3,7 +3,9 @@
     Created on : 28-abr-2015, 22:10:55
     Author     : Alejandro
 --%>
-
+<%-- pagina_errors.jsp 
+Pàgina que rep errors i els printa segons el tipus amb un misstge personalitzat.
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="controllers.UsuariRepetitException"%>
 <%@ page import="controllers.PasswordIncorrecteException"%>

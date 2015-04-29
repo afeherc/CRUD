@@ -7,13 +7,19 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
- *
- * @author Alejandro
+ * Classes per gestionar la validació i el alta de usuaris. Retorna les
+ * excepcions indicades segons la circunstància. 
+ * @author Alejandro Feher Canadell
+ * @since 1.0
+ * @version 1.0 29-04-2015
  */
 public class GestioUsu {
 
-    //Validar ususari
-    public void validarUsuari(Usuari usu) throws UsuariInexistentException, PasswordIncorrecteException, ServletException {
+    /**
+     * Mètode buït per validar usuaris.
+     */
+    public void validarUsuari(Usuari usu) throws UsuariInexistentException, 
+            PasswordIncorrecteException, ServletException {
         try {
             //Inici de sessio amb hibernate.
             Session session = HibernateUtil_Videojocs.getSessionFactory().openSession();
@@ -38,7 +44,10 @@ public class GestioUsu {
             throw new ServletException(ex);
         }
     }
-
+    /**
+     * Mètode buït per enregistrar usuaris nous a la base de dades en cas
+     * que no ho estiguin ja.
+     */
     public void registrarUsuari(Usuari u) throws UsuariRepetitException{
         try{
         Session session = HibernateUtil_Videojocs.getSessionFactory().openSession();

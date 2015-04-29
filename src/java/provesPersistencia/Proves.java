@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package provesPersistencia;
 
 import classes.Videojoc;
@@ -14,14 +8,16 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
- *
+ * Classe Proves per comprovar si els mappings funcionen.
  * @author Alejandro
+ * @since 1.0
+ * @version 1.0 29-04-2015
  */
 public class Proves {
     public static void main(String[] args) {
         System.out.println("Hibernate + Oracle 11 xe + Prova llibres");
         Session session = HibernateUtil_Videojocs.getSessionFactory().openSession();
-         insertLlibre(session);
+         //insertLlibre(session);
         // queryLlibres(session);
         // consultaLlibre(session);
         // updateLlibre(session);

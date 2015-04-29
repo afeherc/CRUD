@@ -3,6 +3,9 @@
     Created on : 26-abr-2015, 12:05:26
     Author     : Alejandro
 --%>
+<%-- index.jsp 
+Pàgina que redirecciona al controlador les demandes del usuari o torna al login.
+--%>
 <%@page import="classes.Usuari"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

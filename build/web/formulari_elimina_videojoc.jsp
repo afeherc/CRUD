@@ -3,6 +3,10 @@
     Created on : 27-abr-2015, 12:10:16
     Author     : Alejandro
 --%>
+<%-- formulari_elimina_videojoc.jsp 
+Formulari amb un sol input que envia un post a Controlador amb el id del
+videojoc a eliminar.
+--%>
 <%@page errorPage="pagina_errors.jsp" contentType="text/html" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,7 +33,8 @@
             Torna al <a href="index.jsp">index</a>
         </form>
         
-        <!--<form action="Controlador?accio=delete" method="post">
+        <!--Formulari antic (sense css).
+        <form action="Controlador?accio=delete" method="post">
        <label> Introdueix el id del videojoc a eliminar. <br />
           <input type="text" name="idVideojoc" />
        </label>
